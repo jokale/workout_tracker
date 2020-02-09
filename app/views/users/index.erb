@@ -1,6 +1,6 @@
 <center><h2> A list of all the athletes on the site : </h2></center>
 <ul>
-<% @users.each do |user| %>
-<li><h3><%= user.name %></h3></li>
+<%= @users.each do |user| %>
+<li><h3><a href="/users/<%= user.id %>"><%= user.name %></a></h3></li>
 <% end %>
 </ul>

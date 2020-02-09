@@ -14,7 +14,19 @@ class ApplicationController < Sinatra::Base
     erb :"users/new"
   end
   post '/users' do
-    "Hello World"
-  end
+    user = User.new[params["user"]]
+    if user.save 
+      redirect to "/users"
+    else 
+      @errors = user.errors.full_messages
+      erb :"/users/new"
+    end 
+   end 
+
+   get "/users/:id" do 
+    @user = User.find_by_id(params[:id])
+    erb :"/users/show"
+   end 
+
 
 end
