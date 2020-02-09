@@ -10,5 +10,9 @@ class ApplicationController < Sinatra::Base
   get "/" do
     erb :mainpage
   end
+  get '/users/new' do
+    erb :"users/new"
+  end
+
 
 end

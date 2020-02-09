@@ -1,7 +1,5 @@
 <ul>
-
 <% @users.each do |user| %>
-<li><a href="/authors/<%= user.id%>"><%= user.name %></a></li>
+<li><%= user.name %></li>
 <% end %>
-
 </ul>
