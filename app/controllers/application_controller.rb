@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
   get '/users/new' do
     erb :"users/new"
   end
+  
   post '/users' do
     user = User.new[params["user"]]
     if user.save 
@@ -26,6 +27,11 @@ class ApplicationController < Sinatra::Base
    get "/users/:id" do 
     @user = User.find_by_id(params[:id])
     erb :"/users/show"
+   end 
+
+   get "users/:id/edit" do 
+    @user = User.find_by_id(params[:id])
+    erb :"/edit"
    end 
 
 
