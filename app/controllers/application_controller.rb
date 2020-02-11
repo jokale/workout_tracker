@@ -10,29 +10,32 @@ class ApplicationController < Sinatra::Base
   get "/" do
     erb :mainpage
   end
-  get '/users/new' do
-    erb :"users/new"
-  end
+
+ 
+
+  # get '/users/new' do
+  #   erb :"users/new"
+  # end
   
-  post '/users' do
-    user = User.new[params["user"]]
-    if user.save 
-      redirect to "/users"
-    else 
-      @errors = user.errors.full_messages
-      erb :"/users/new"
-    end 
-   end 
+  # post '/users' do
+  #   user = User.new[params["user"]]
+  #   if user.save 
+  #     redirect to "/users"
+  #   else 
+  #     @errors = user.errors.full_messages
+  #     erb :"/users/new"
+  #   end 
+  #  end 
 
-   get "/users/:id" do 
-    @user = User.find_by_id(params[:id])
-    erb :"/users/show"
-   end 
+  #  get "/users/:id" do 
+  #   @user = User.find_by_id(params[:id])
+  #   erb :"/users/show"
+  #  end 
 
-   get "users/:id/edit" do 
-    @user = User.find_by_id(params[:id])
-    erb :"/edit"
-   end 
+  #  get "users/:id/edit" do 
+  #   @user = User.find_by_id(params[:id])
+  #   erb :"/edit"
+  #  end 
 
 
 end
