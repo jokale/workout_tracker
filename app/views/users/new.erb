@@ -1,10 +1,8 @@
 
-<html>
- <head>
- <title> Workout tracker</title>
-</head>
 <body style="background-color:powderblue;">
 <center><h1> Sign up to create a new favourite workout</h1></center>
+
+<form action="/signup" method="post">
 <div>
     <center><label for="email">Email: </label></center>
     <center><input type="text" name="author[email]" id="email"></center>
@@ -14,7 +12,7 @@
     <center><label for="password">password: </label></center>
     <center><input type="text" name="author[password]" id="password"></center>
   </div>
-<form action="/users" method="post">
+
 <div>
 
 <center><h2><label for="name">Name:</label><h2></center>
@@ -36,6 +34,5 @@
 
 </form>
 </body>
-</html>
 
 

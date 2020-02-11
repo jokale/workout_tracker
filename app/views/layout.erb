@@ -7,9 +7,20 @@
   <body>
   <nav>
   <ul>
-    <li><a href="/login"> Login </li>
-    <li><a href="/users"> View all athletes</li>
-    <li><a href="/users/new">Create new workout </li>
+     <% if logged_in? %>
+      <li><form class="" action="/logout" method="post">
+        <input type="submit" name="" value="log out">
+      </form></li>
+
+      <% else %>
+
+       <li><a href="/login"> Login</a></li>
+       <li><a href="/users/new">Create new workout</a></li> 
+
+         <% end %>
+
+     <li><a href="/users"> View all athletes</a></li>
+
   </ul>
   
   </nav>
