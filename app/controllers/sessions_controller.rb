@@ -4,5 +4,6 @@ class SessionsController < ApplicationController
 erb :"sessions/new"
     end 
 
-    post "/"
+    post "/" do 
+    end 
 end 
