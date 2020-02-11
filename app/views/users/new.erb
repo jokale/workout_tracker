@@ -4,8 +4,16 @@
  <title> Workout tracker</title>
 </head>
 <body style="background-color:powderblue;">
-<center><h1> Create new favourite workout</h1></center>
+<center><h1> Sign up to create a new favourite workout</h1></center>
+<div>
+    <center><label for="email">Email: </label></center>
+    <center><input type="text" name="author[email]" id="email"></center>
+  </div>
+  <div>
 
+    <center><label for="password">password: </label></center>
+    <center><input type="text" name="author[password]" id="password"></center>
+  </div>
 <form action="/users" method="post">
 <div>
 
@@ -21,16 +29,9 @@
   <center><h2><label for="name">Workout:</label></h2></center>
   <center><input type="text" name="user[workout]" id="workout"><center>
 </div>
-  <div>
-    <center><label for="email">Email: </label></center>
-    <center><input type="text" name="author[email]" id="email"></center>
-  </div>
-  <div>
-    <center><label for="password">password: </label></center>
-    <center><input type="text" name="author[password]" id="password"></center>
-  </div>
+  
 <div>
-<center><h2><input type="submit" value="Create favourite workout"></h2></center>
+<center><h2><input type="submit" value="Click to become a member and save your favourite workout"></h2></center>
 </div>
 
 </form>
