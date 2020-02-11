@@ -12,8 +12,13 @@ class ApplicationController < Sinatra::Base
   get "/" do
     erb :mainpage
   end
-
- 
+  get '/signup' do
+    "Hello World"
+  end
+  
+  post '/signup' do
+    "Hello World"
+  end
 
 def logged_in?
 !!current_user
