@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 erb :"sessions/new"
     end 
 
-    post "/" do 
+    post "/login" do 
+        "hello welcome to log in you've just submitted your form "
     end 
 end 
