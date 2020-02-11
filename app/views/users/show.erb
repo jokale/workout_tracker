@@ -5,5 +5,8 @@
 <p>Workout:  <%=@user.workout%></p>
 
 <p> Edit:  <a href="/users/<%=@user.id%>/edit"><%=@user.name %></a></p>
+<form action="/users/<%=user.id%>" method="post">
+<input type="hidden" name="_method" value="delete">
 
+<input type="submit" value="Delete User and Workout ">
 </body>

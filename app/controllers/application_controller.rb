@@ -5,6 +5,8 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    enable :sessions 
+    set :session_secret, SecureRandom.hex 
   end
 
   get "/" do
@@ -12,6 +14,24 @@ class ApplicationController < Sinatra::Base
   end
 
  
+#helper methods 
+helper do 
+
+def logged_in?
+!!current_user
+end 
+
+def current_user
+
+  User.find_by(id: session[:author_id])
+end 
+
+
+
+
+
+
+
 
   # get '/users/new' do
   #   erb :"users/new"
