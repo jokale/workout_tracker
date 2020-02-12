@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
         
         redirect to "/users/#{user.id}"
         else 
+          redirect to '/'
      end 
     end 
 
