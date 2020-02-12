@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     end 
 
 
-
     get '/users/new' do
         erb :"users/new"
       end
