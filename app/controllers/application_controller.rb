@@ -13,16 +13,18 @@ class ApplicationController < Sinatra::Base
     erb :mainpage
   end
 
- get '/signup' do 
-  erb :loggedpage
- end 
+   get '/signup' do 
+    erb :loggedpage
+   end 
   
    post '/signup' do
-   if user.save 
+     if user.save 
+      user = User.new(params[:user])
+
      redirect to "/loggedpage"
-    else 
-       redirect to "/users/new"
-    end 
+     else 
+         redirect to "/users/new"
+      end 
   end  
 
 def logged_in?

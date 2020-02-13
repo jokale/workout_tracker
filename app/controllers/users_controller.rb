@@ -10,13 +10,14 @@ class UsersController < ApplicationController
       end
       
       post '/users' do
-
-        user = User.new(params[:user])
-        if user.save 
-          session[:user_id]= user.id 
+       
+         user = User.new(params["user"])
+         if user.save 
+          #  session[:user_id]= user.id 
           redirect to "/users"
-        else 
-          erb :"/users/new"
+         else 
+          @errors = user.errors.full_messages 
+           erb :"/users/new"
         end 
        end 
 
@@ -54,6 +55,8 @@ class UsersController < ApplicationController
         end
       end
 
+
+      # I need to add a get route that updates I don't think I currently have one
 # delete 
       delete '/users/:id' do
         @user = User.find(params[:id])
