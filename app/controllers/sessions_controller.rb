@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController 
+  # storing my sessions
 
     get "/login" do 
        erb :"sessions/new"
