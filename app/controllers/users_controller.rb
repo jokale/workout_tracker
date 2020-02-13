@@ -1,9 +1,8 @@
 class UsersController < ApplicationController 
 
-    get '/users' do 
-        @users = User.all 
-        erb :"/users/index"
-    end 
+
+  # create
+   
 
 
     get '/users/new' do
@@ -12,27 +11,36 @@ class UsersController < ApplicationController
       
       post '/users' do
 
-        user = User.new(params["user"])
+        user = User.new(params[:user])
         if user.save 
           session[:user_id]= user.id 
           redirect to "/users"
         else 
-          @errors = user.errors.full_messages
           erb :"/users/new"
         end 
        end 
-    
+
+      #  read
+
+     get '/users' do 
+        @users = User.all 
+        erb :"/users/index"
+    end 
+
+
        get "/users/:id" do 
         @user = User.find_by_id(params[:id])
         erb :"/users/show"
        end 
     
+# update
+
        get "users/:id/edit" do 
         @user = User.find_by_id(params[:id])
         if @user == current_user
           erb :"/users/edit"
         else 
-            redirect '/'
+            redirect "/"
        end 
     end 
 
@@ -46,8 +54,9 @@ class UsersController < ApplicationController
         end
       end
 
+# delete 
       delete '/users/:id' do
-        @user = User.find_by_id(params[:id])
+        @user = User.find(params[:id])
         if @user
           @user.destroy
         end

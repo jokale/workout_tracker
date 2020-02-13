@@ -18,11 +18,11 @@ class ApplicationController < Sinatra::Base
  end 
   
    post '/signup' do
-    if user.save 
-     redirect to '/loggedpage'
+   if user.save 
+     redirect to "/loggedpage"
     else 
-       redirect to '/users/new'
-    end
+       redirect to "/users/new"
+    end 
   end  
 
 def logged_in?
