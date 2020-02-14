@@ -1,12 +1,12 @@
 <body style="background-color:powderblue;">
 <center><h1><%= @user.name%>'s Athlete Page</h1></center>
 
-<center><p>Area: <%=@user.area%></p></center>
-<center><p>Workout: <%=@user.workout%></p></center>
+<center><p style="color:purple;">Area: <%=@user.area%></p></center>
+<center><p style="color:purple;">Workout: <%=@user.workout%></p></center>
 
 <% if current_user == @user %>
 
-<p> Edit:  <a href="/users/<%=@user.id%>/edit"><%=@user.name %></a></p>
+<p style="color:purple;"> Edit:  <a href="/users/<%=@user.id%>/edit"><%=@user.name %></a></p>
   
 
 <form action="/users/<%=user.id%>" method="post">
