@@ -29,16 +29,21 @@ if user.save
       end 
   end  
 
+  get '/users/1/edit' do
+    "Hello World"
+  end
   # 
   # helper methods
   helpers do  
+
+
 def logged_in?
 !!current_user
 end 
 
 def current_user
 
-  User.find_by(id: session[:author_id])
+  User.find_by(id: session[:user_id])
 end 
 end 
 
