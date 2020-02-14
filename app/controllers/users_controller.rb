@@ -17,7 +17,7 @@ class UsersController < ApplicationController
           redirect to "/users"
          else 
           @errors = user.errors.full_messages 
-           erb :"/users/new"
+           redirect to "/"
         end 
        end 
 
