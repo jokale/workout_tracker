@@ -14,11 +14,12 @@ class UsersController < ApplicationController
          user = User.new(params["user"])
          if user.save 
           #  session[:user_id]= user.id 
-          redirect to "/users"
+          # redirect to "/users"
+          redirect to "/loggedpage"
          else 
           # flash[:warning]= "Sorry your workout has not been saved please try again "
            @errors = user.errors.full_messages 
-           redirect to "/users/new"
+           erb :"/error"
         end 
        end 
 

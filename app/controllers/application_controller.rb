@@ -25,9 +25,10 @@ class ApplicationController < Sinatra::Base
       if user.save
      redirect to "/loggedpage"
      else 
-         redirect to "/users/new"
+         redirect to "/error"
       end 
   end  
+
 
   get '/users/1/edit' do
     "Hello World"
