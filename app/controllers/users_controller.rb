@@ -1,7 +1,7 @@
 class UsersController < ApplicationController 
 
 
-  # create
+  # create user 
    
 
 
@@ -21,14 +21,14 @@ class UsersController < ApplicationController
         end 
        end 
 
-      #  read
-
+   
+# index action
      get '/users' do 
         @users = User.all 
         erb :"/users/index"
     end 
 
-
+   #  read
        get "/users/:id" do 
         @user = User.find_by_id(params[:id])
         erb :"/users/show"

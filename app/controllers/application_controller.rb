@@ -13,20 +13,25 @@ class ApplicationController < Sinatra::Base
     erb :mainpage
   end
 
+  # signup route
+
    get '/signup' do 
     erb :loggedpage
    end 
   
    post '/signup' do
-     if user.save 
+      
       user = User.new(params[:user])
-
+if user.save
      redirect to "/loggedpage"
      else 
          redirect to "/users/new"
       end 
   end  
 
+  # 
+  # helper methods
+  helpers do  
 def logged_in?
 !!current_user
 end 
@@ -34,6 +39,7 @@ end
 def current_user
 
   User.find_by(id: session[:author_id])
+end 
 end 
 
 
