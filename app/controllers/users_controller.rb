@@ -16,8 +16,9 @@ class UsersController < ApplicationController
           #  session[:user_id]= user.id 
           redirect to "/users"
          else 
-          @errors = user.errors.full_messages 
-           redirect to "/"
+          # flash[:warning]= "Sorry your workout has not been saved please try again "
+           @errors = user.errors.full_messages 
+           redirect to "/users/new"
         end 
        end 
 
