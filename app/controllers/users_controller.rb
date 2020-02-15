@@ -10,16 +10,19 @@ class UsersController < ApplicationController
       end
       
       post '/users' do
-     
-         user = User.new(params[":id"])
+        
+      #  params["user"]
+       user = User.new(params["user"])
+       
+        #  user = User.new(params[":id"])
         
               if user.save 
-          session[:user_id]= user.id 
+          # session[:user_id]= user.id 
 
-          redirect to "/loggedpage"
+          redirect to "/users"
          else 
-         
-           erb :"/error"
+          @errors = user.errors.full_messages
+           erb :"/users/new"
         end 
        end 
 
