@@ -1,14 +1,12 @@
 
-
-<html>
- <head>
- <title> Workout tracker</title>
-</head>
 <body style="background-color:powderblue;">
 <center><h1> Edit favourite workout</h1></center>
 
-<form action="/users/<%= @user.id %>" method="post">
+<form action="/users/<%= @author.id%>" method="post">
 <input type="hidden" name="_method" value="patch">
+
+
+
 <div>
 
 <center><h2><label for="name">Name:</label><h2></center>
@@ -16,20 +14,27 @@
 
 </div>
 <div>
-<center><h2><label for="name">Area:</label></h2></center>
-<center><input type="text" name="user[area]" id="area"></center>
+  <center><h2><label for="name">Area:</label></h2></center>
+  <center><input type="text" name="user[area]" id="area"></center>
 </div>
 <div>
-<center><h2><label for="name">Workout:</label></h2></center>
-<center><input type="text" name="user[workout]" id="workout"><center>
+  <center><h2><label for="name">Workout:</label></h2></center>
+  <center><input type="text" name="user[workout]" id="workout"><center>
 </div>
+  <div>
+    <center><h2><label for="email">Email: </label><h2></center>
+    <center><input type="text" name="user[email]" id="email"></center>
+  </div>
+  <div>
 
+    <center><h2><label for="password">password: </label><h2></center>
+    <center><input type="text" name="user[password]" id="password"></center>
+  </div>
 <div>
-<center><h2><input type="submit" value="Edit favourite workout"></h2></center>
+<center><h2><input type="submit" value="Edit workout"></h2></center>
 </div>
 
 </form>
 </body>
-</html>
 
 

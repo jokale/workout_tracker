@@ -29,11 +29,13 @@ class ApplicationController < Sinatra::Base
          redirect to "/error"
       end 
   end  
+ 
+
+  # get '/users/1/edit' do
+  #   "Hello World"
 
 
-  get '/users/1/edit' do
-    "Hello World"
-  end
+  # end
   # the above method i was told by the app errors to add 
   # helper methods
   helpers do  
