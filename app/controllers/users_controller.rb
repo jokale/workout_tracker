@@ -41,24 +41,25 @@ class UsersController < ApplicationController
     
 # update
 
-       get "users/:id/edit" do 
-        @user = User.find_by_id(params[:id])
-        if @user == current_user
-          erb :"/users/edit"
-        else 
-            redirect "/"
-       end 
+        get 'users/:id/edit' do 
+          # @user = User.find_by(id: params[:id])
+        #  binding.pry
+         # if @user == current_user
+           erb :"/users/edit"
+        #  else 
+            # redirect "/"
+      #  end 
     end 
 
-    patch '/userss/:id' do
-        @user = User.find_by_id(params[:id])
+    # patch '/userss/:id' do
+        # @user = User.find_by_id(params[:id])
     
         # if @user.update(params[:user])
           # redirect to "/users/#{@user.id}"
         # else
-          erb :"/users/edit"
+          # erb :"/users/edit"
         # end
-      end
+      # end
 
 
       # I need to add a get route that updates I don't think I currently have one

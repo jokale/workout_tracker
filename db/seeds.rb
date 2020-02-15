@@ -5,9 +5,3 @@ joanna.workout = "twenty reps of machine leg press, ten quick reps of stiff legg
 
 joanna.save 
 
-badwolf = User.new 
-badwolf.name = "Mr Wolf"
-badwolf.area = "Face"
-badwolf.workout = "blowing down little piggies houses"
-
-badwolf.save 

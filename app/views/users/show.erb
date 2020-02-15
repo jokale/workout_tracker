@@ -5,11 +5,11 @@
 <!--<center><p style="color:purple;">Workout: <%=@user.workout%></p></center>-->
 <center><p style="color:purple;"> Edit Workout:  <a href="/users/<%=@user.id%>/edit"><%=@user.workout %></a></p></center>
 
-<% if current_user == @user %>
+<!--<<% if current_user == @user %>
 
   
 
-<form action="/users/<%=user.id%>" method="post">
+<form action="/users/<%=@user.id%>" method="post">
 <input type="hidden" name="_method" value="delete">
 
 <input type="submit" value="Delete User and Workout ">
