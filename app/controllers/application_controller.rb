@@ -22,7 +22,8 @@ class ApplicationController < Sinatra::Base
    post '/signup' do
       
       user = User.new(params[:user])
-      if user.save
+       if user.save
+       
      redirect to "/loggedpage"
      else 
          redirect to "/error"

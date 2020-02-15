@@ -10,15 +10,15 @@ class UsersController < ApplicationController
       end
       
       post '/users' do
-       
-         user = User.new(params["user"])
-         if user.save 
-          #  session[:user_id]= user.id 
-          # redirect to "/users"
+     
+         user = User.new(params[":id"])
+        
+              if user.save 
+          session[:user_id]= user.id 
+
           redirect to "/loggedpage"
          else 
-          # flash[:warning]= "Sorry your workout has not been saved please try again "
-           @errors = user.errors.full_messages 
+         
            erb :"/error"
         end 
        end 
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
        end 
     end 
 
-    patch '/authors/:id' do
+    patch '/userss/:id' do
         @user = User.find_by_id(params[:id])
     
         if @user.update(params[:user])
