@@ -41,15 +41,18 @@ class UsersController < ApplicationController
 # update
 
         get 'users/:id/edit' do 
-          # @user = User.find_by(id: params[:id])
+          #  @user = User.find_by(id: params[:id])
         #  binding.pry
-         # if @user == current_user
+          #  @user == current_user
            erb :"/users/edit"
         #  else 
-            # redirect "/"
+            #  redirect "/"
       #  end 
     end 
 
+    patch '/workouts/1' do
+      erb :"/workouts/edit"
+    end
      patch '/users/:id' do
         # @user = User.find_by_id(params[:id])
     
