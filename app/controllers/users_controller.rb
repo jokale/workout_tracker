@@ -10,14 +10,14 @@ class UsersController < ApplicationController
       end
       
       post '/users' do
-        
+        #  binding.pry 
       #  params["user"]
        user = User.new(params["user"])
-       
+       workout = Workout.new(params["workout"])
+       user.workout = workout
         #  user = User.new(params[":id"])
-        
-              if user.save 
-          # session[:user_id]= user.id 
+        if user.save 
+        session[:user_id]= user.id 
 
           redirect to "/users"
          else 
