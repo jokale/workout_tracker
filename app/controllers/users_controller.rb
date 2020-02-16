@@ -10,11 +10,10 @@ class UsersController < ApplicationController
       end
       
       post '/users' do
-        #  binding.pry 
-      #  params["user"]
+      
        user = User.new(params["user"])
-       workout = Workout.new(params["workout"])
-       user.workout = workout
+       workout = Workout.create(params["workout"])
+       user.workouts << workout
         #  user = User.new(params[":id"])
         if user.save 
         session[:user_id]= user.id 
@@ -51,18 +50,18 @@ class UsersController < ApplicationController
       #  end 
     end 
 
-    # patch '/userss/:id' do
+     patch '/users/:id' do
         # @user = User.find_by_id(params[:id])
     
         # if @user.update(params[:user])
           # redirect to "/users/#{@user.id}"
         # else
-          # erb :"/users/edit"
+           erb :"/users/edit"
         # end
-      # end
+       end
 
 
-      # I need to add a get route that updates I don't think I currently have one
+      
 # delete 
       delete '/users/:id' do
         @user = User.find(params[:id])
