@@ -31,13 +31,6 @@ class ApplicationController < Sinatra::Base
   end  
  
 
-  # get '/users/1/edit' do
-  #   "Hello World"
-
-
-  # end
-  # the above method i was told by the app errors to add 
-  # helper methods
   helpers do  
 
 

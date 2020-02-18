@@ -14,7 +14,7 @@ class UsersController < ApplicationController
        user = User.new(params["user"])
        workout = Workout.create(params["workout"])
        user.workouts << workout
-        #  user = User.new(params[":id"])
+       
         if user.save 
         session[:user_id]= user.id 
 
@@ -41,26 +41,19 @@ class UsersController < ApplicationController
 # update
 
         get 'users/:id/edit' do 
-          #  @user = User.find_by(id: params[:id])
-        #  binding.pry
-          #  @user == current_user
+         
            erb :"/users/edit"
-        #  else 
-            #  redirect "/"
-      #  end 
+       
     end 
 
     patch '/workouts/1' do
       erb :"/workouts/edit"
     end
+
+
      patch '/users/:id' do
-        # @user = User.find_by_id(params[:id])
-    
-        # if @user.update(params[:user])
-          # redirect to "/users/#{@user.id}"
-        # else
+      
            erb :"/users/edit"
-        # end
        end
 
 
