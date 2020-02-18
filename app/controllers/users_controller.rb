@@ -39,42 +39,39 @@ class UsersController < ApplicationController
     
 # update
 get '/users/:id/edit' do 
+  @user = User.find_by_id(params[:id])
+  if @user == current_user 
   erb :"/users/edit"
+  else 
+    redirect to "/" 
+  end
 end 
 
-post '/users/1/edit' do
-  erb :"/users/edit"
-end
+  post '/users/:id/edit' do
+    erb :"/users/edit"
+  end
       
 # update is not physically working 
 
-patch '/users/:id/edit' do
-  # user.save 
-  redirect to "/users"
-end
-
-# post '/users/:id/edit' do
-        #  "Hello World"
-        #  erb :"/users/update"
-      #  end
-        # get 'users/:id/edit' do 
-         
-          #  erb :"/users/edit"
-       
-    # end 
-
-    # patch '/workouts/1' do
-      # erb :"/user/edit"
-    # end
-
-
-     patch '/users/:id' do
-      
-           erb :"/users/edit"
-       end
+# patch '/users/:id' do
+#   @user = User.find(params[:email])
+#     if @user.update(params[:user])
+#   redirect to "/users/:id"
+#     else 
+#       erb :"/users/edit"
+#   end
+# end
+# # this doesn't seem to be working 
+# patch '/users/:id/edit' do
+#   @user = User.find(params[:user])
+#     if @user.update(params[:user])
+#   redirect to "/users/:id"
+#     else 
+#       erb :"/users/edit"
+#   end
+# end
 
 
-      
 # delete 
       delete '/users/:id' do
         @user = User.find(params[:id])

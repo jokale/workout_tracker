@@ -37,7 +37,17 @@ class WorkoutsController < ApplicationController
         erb :"/workouts/edit"
     end 
 
+    patch '/workouts/:id' do
+        "Hello World"
+      end
 
+      delete '/workouts/:id' do
+        @workout = Workout.find(params[:id])
+        if @workout 
+          @workout.destroy
+        end
+        redirect to "/users"
+      end
 
 
 end 

@@ -2,12 +2,12 @@
 <center><h1>Workout details</h1></center>
 
 <center><p>Area: <%=@workout.area%></p></center>
-<center><p>Workouts: <%=@workout.title%></p></center>
+<center><p>Workout: <%=@workout.title%></p></center>
 
 
 
 
-<% if current_user == @user %>
+ <% if current_user == @workout.id %> 
 
 
  <form action="/workouts/<%=@workout.id%>/edit" method="post">
@@ -16,7 +16,7 @@
 <center><input type="submit" value="Edit workout"></center>
 </form> 
 
-<form action="/users/<%=@user.id%>" method="post">
+<form action="/workouts/<%=@workout.id%>" method="post">
 <input type="hidden" name="_method" value="delete">
 
 <center><input type="submit" value="Delete User"></center>
