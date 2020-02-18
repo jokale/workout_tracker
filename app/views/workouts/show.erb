@@ -1,0 +1,24 @@
+<body style="background-color:powderblue;">
+<center><h1 style="color:blue;"><%= @user.name%>'s favourite workouts</h1></center>
+
+<center><p style="color:blue;">Name: <%=@user.name%></p></center>
+<center><p style="color:blue;">Workouts: <%=@workout.title%></p></center>
+
+
+
+
+<<% if current_user == @user %>
+
+
+ <form action="/workouts/<%=@workout.id%>/edit" method="post">
+<input type="hidden" name="_method" value="edit">
+
+<center><input type="submit" value="Edit workout"></center>
+</form> 
+
+<form action="/users/<%=@user.id%>" method="post">
+<input type="hidden" name="_method" value="delete">
+
+<center><input type="submit" value="Delete User"></center>
+</form>
+<%end%>

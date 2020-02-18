@@ -9,13 +9,13 @@ class WorkoutsController < ApplicationController
       end
 
       get '/workouts' do
-        "Hello World"
+        @workouts = Workout.all 
         erb :"/workouts/index"
       end
   
       post '/workouts' do
         "Hello World"
-        workout = Workout.new(params["workout"])
+        @workout = Workout.new(params["workout"])
         if workout.save 
             session[:workout_id]= workout.id 
             redirect  to "/workouts"

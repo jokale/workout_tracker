@@ -1,9 +1,11 @@
 <body style="background-color:powderblue;">
 <center><h1> Workouts : </h2></center>
 <center><h3> Below are some workouts created by our amazing athletes!</h3><center>
+<center><h3> Click a specific workout to see more details</h3><center>
+
 <ul>
-<% @workout.each do |workout| %>
-<li><h2><a href="/workouts/<%= workout.id %>"><%= user.name %></a></h2></li>
+<% @workouts.each do |workout| %>
+<li><h2><a href="/workouts/<%= workout.id %>"><%= workout.title %></a></h2></li>
 <%end%>
 </ul>
 </body>
