@@ -38,16 +38,22 @@ class UsersController < ApplicationController
        end 
     
 # update
-
-        get 'users/:id/edit' do 
+get '/users/:id/edit' do 
+  erb :"/users/edit"
+end 
+       post '/users/:id/edit' do
+        #  "Hello World"
+         erb :"/users/update"
+       end
+        # get 'users/:id/edit' do 
          
-           erb :"/users/edit"
+          #  erb :"/users/edit"
        
-    end 
+    # end 
 
-    patch '/workouts/1' do
-      erb :"/workouts/edit"
-    end
+    # patch '/workouts/1' do
+      # erb :"/user/edit"
+    # end
 
 
      patch '/users/:id' do
