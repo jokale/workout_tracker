@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20200218100832) do
 
   create_table "workouts", force: :cascade do |t|
     t.string   "title"
+    t.string   "area"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
