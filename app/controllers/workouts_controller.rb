@@ -13,9 +13,11 @@ class WorkoutsController < ApplicationController
         erb :"/workouts/index"
       end
   
+     
+
       post '/workouts' do
         "Hello World"
-        @workout = Workout.new(params["workout"])
+        workout = Workout.new(params["workout"])
         if workout.save 
             session[:workout_id]= workout.id 
             redirect  to "/workouts"
@@ -24,6 +26,10 @@ class WorkoutsController < ApplicationController
         end 
       end
 
+ get "/workouts/:id" do 
+        @workout = Workout.find_by_id(params[:id])
+        erb :"/workouts/show"
+       end
 
     get '/workouts/:id/edit' do 
        

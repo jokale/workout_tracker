@@ -1,13 +1,13 @@
 <body style="background-color:powderblue;">
-<center><h1 style="color:blue;"><%= @user.name%>'s favourite workouts</h1></center>
+<center><h1>Workout details</h1></center>
 
-<center><p style="color:blue;">Name: <%=@user.name%></p></center>
-<center><p style="color:blue;">Workouts: <%=@workout.title%></p></center>
-
-
+<center><p>Area: <%=@workout.area%></p></center>
+<center><p>Workouts: <%=@workout.title%></p></center>
 
 
-<<% if current_user == @user %>
+
+
+<% if current_user == @user %>
 
 
  <form action="/workouts/<%=@workout.id%>/edit" method="post">
