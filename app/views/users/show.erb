@@ -1,14 +1,16 @@
 <body style="background-color:powderblue;">
 <center><h1><%= @user.name%>'s Athlete Page</h1></center>
 
-<center><p style="color:purple;">Area: <%=@user.area%></p></center>
-<center><p style="color:purple;">Workout: <%=@user.workout%></p></center>
+<center><p style="color:purple;">Name: <%=@user.name%></p></center>
+<center><p style="color:purple;">Email: <%=@user.email%></p></center>
+
+
 
 
 <<% if current_user == @user %>
 
 
-<center><p style="color:purple;"> Edit Workout:  <a href="/users/<%=@user.workouts%>/edit"><%=@user.workouts%></a></p></center>
+<center><p style="color:purple;"> Edit user:  <a href="/users/<%=@user.id%>/edit"><%=@user.name%></a></p></center>
 
 
   
@@ -16,7 +18,7 @@
 <form action="/users/<%=@user.id%>" method="post">
 <input type="hidden" name="_method" value="delete">
 
-<center><input type="submit" value="Delete User and Workout "></center>
+<center><input type="submit" value="Delete User"></center>
 </form>
 <%end%>
 

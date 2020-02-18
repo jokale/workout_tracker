@@ -9,11 +9,10 @@ class UsersController < ApplicationController
         erb :"users/new"
       end
       
-      post '/users' do
-      
+      post '/users' do 
        user = User.new(params["user"])
-       workout = Workout.create(params["workout"])
-       user.workouts << workout
+      #  workout = Workout.create(params["workout"])
+      #  user.workouts << workout
        
         if user.save 
         session[:user_id]= user.id 
