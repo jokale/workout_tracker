@@ -41,10 +41,22 @@ class UsersController < ApplicationController
 get '/users/:id/edit' do 
   erb :"/users/edit"
 end 
-       post '/users/:id/edit' do
+
+post '/users/1/edit' do
+  erb :"/users/edit"
+end
+      
+# update is not physically working 
+
+patch '/users/:id/edit' do
+  # user.save 
+  redirect to "/users"
+end
+
+# post '/users/:id/edit' do
         #  "Hello World"
-         erb :"/users/update"
-       end
+        #  erb :"/users/update"
+      #  end
         # get 'users/:id/edit' do 
          
           #  erb :"/users/edit"
