@@ -16,7 +16,6 @@ class WorkoutsController < ApplicationController
      
 
       post '/workouts' do
-        "Hello World"
         workout = Workout.new(params["workout"])
         if workout.save 
             session[:workout_id]= workout.id 
@@ -37,9 +36,15 @@ class WorkoutsController < ApplicationController
         erb :"/workouts/edit"
     end 
 
-    patch '/workouts/:id' do
-        "Hello World"
+    patch '/workouts/:id/edit' do 
+      # binding.pry 
+      @workout = Workout.find_by_id(params[:id])
+      if @workout.update(params[:workout])
+    redirect to "/workouts/#{@workout.id}"
+      else 
+        erb :"/workouts/edit"
       end
+    end 
 
       delete '/workouts/:id' do
         @workout = Workout.find(params[:id])

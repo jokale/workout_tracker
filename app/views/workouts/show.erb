@@ -1,6 +1,7 @@
 <body style="background-color:powderblue;">
 <center><h3 class="blue-grey-text darken-1">Workout details</h3></center>
 
+<center><p class="blue-grey-text darken-1">Creator: <%=@workout.user.name%></p></center>
 
 <center><p class="blue-grey-text darken-1">Area: <%=@workout.area%></p></center>
 <center><p class="blue-grey-text darken-1">Workout: <%=@workout.title%></p></center>
@@ -8,18 +9,15 @@
 
 
 
- <% if current_user == @workout.id %> 
+ <% if current_user.id == @workout.user.id %> 
 
 
- <form action="/workouts/<%=@workout.id%>/edit" method="post">
-<input type="hidden" name="_method" value="edit">
 
-<center><input type="submit" value="Edit workout"></center>
-</form> 
+<center><button><a href="/workouts/<%=@workout.id%>/edit"> Edit workout</a></button></center>
 
 <form action="/workouts/<%=@workout.id%>" method="post">
 <input type="hidden" name="_method" value="delete">
 
-<center><input type="submit" value="Delete User"></center>
+<center><input type="submit" value="Delete workout"></center>
 </form>
 <%end%>

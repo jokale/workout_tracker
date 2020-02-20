@@ -1,24 +1,24 @@
 <body style="background-color:powderblue;">
 <center><h1> Edit favourite workout</h1></center>
 
-<form action="/workouts/<%= @workout.id%>" method="post">
+<form action="/workouts/<%= @workout.id%>/edit" method="post">
 <input type="hidden" name="_method" value="patch">
 
 
 
 <div>
 
-<center><h2><label for="name">Name:</label><h2></center>
-  <center><input type="text" name="workout[name]" id="name"></center>
+<center><h2><label for="user_id">User ID:</label><h2></center>
+  <center><input type="text" name="workout[user_id]" id="user_id" value="<%=current_user[:id]%>"></center>
 
 </div>
 <div>
-  <center><h2><label for="name">Area:</label></h2></center>
-  <center><input type="text" name="workout[area]" id="area"></center>
+  <center><h2><label for="area">Area:</label></h2></center>
+  <center><input type="text" name="workout[area]" id="area" value="<%=@workout.area%>"></center>
 </div>
 <div>
   <center><h2><label for="name">Workout:</label></h2></center>
-  <center><input type="text" name="workout[workout]" id="workout"><center>
+  <center><input type="text" name="workout[title]" id="workout"><center>
 </div>
  
 <div>
