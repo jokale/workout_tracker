@@ -1,5 +1,5 @@
 <body style="background-color:powderblue;">
-<center><h1 style="color:blue;"><%= @user.name%>'s Athlete Page</h1></center>
+<center><h3 style="color:blue;"><%= @user.name%>'s Athlete Page</h3></center>
 
 <center><p>Name: <%=@user.name%></p></center>
 <center><p>Email: <%=@user.email%></p></center>
@@ -9,12 +9,7 @@
 
 <<% if current_user == @user %>
 
-
- <form action="/users/<%=@user.id%>/edit" method="post">
-<input type="hidden" name="_method" value="edit">
-
-<center><input type="submit" value="Edit user information"></center>
-</form> 
+<center><button><a href="/users/<%=@user.id%>/edit"> Edit User</a></button></center>
 
 <form action="/users/<%=@user.id%>" method="post">
 <input type="hidden" name="_method" value="delete">

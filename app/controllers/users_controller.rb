@@ -47,10 +47,34 @@ get '/users/:id/edit' do
   end
 end 
 
-  post '/users/:id/edit' do
-    erb :"/users/edit"
+  # browser asked me to add this even though I shouldn't need it 
+   set :method_override, true 
+    # not too sure if i need the above  
+
+  # patch '/users/:id/edit' do
+  #   # binding.pry
+    
+  #   @user = User.find_by_id(params[:id])
+  #   if @user.update(params[:user])
+  #     redirect to "/users/#{@user.id}"
+  #    @user.save
+  #   else 
+  #     erb :"/users/edit"
+  #   "Hello World"
+  #   end
+  #  end 
+
+  patch '/users/:id/edit' do
+    #  binding.pry 
+    @user = User.find_by_id(params[:id])
+      if @user.update(params[:user])
+    redirect to "/users/#{@user.id}"
+      else 
+        erb :"/users/edit"
+    end
   end
-      
+
+
 # update is not physically working 
 
 # patch '/users/:id' do
