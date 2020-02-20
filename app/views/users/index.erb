@@ -1,7 +1,7 @@
 
 <body style="background-color:powderblue;">
-<center><h1> A list of all the athletes* on the site : </h2></center>
-<center><h3> As a famous owner of a company that rhymes with Smike once said <br> *"Everyone who has a body is an athlete" or close enough.<br> We are paraphrasing here cut us some slack!</h3><center>
+<center><h1 class="blue-grey-text darken-1"> A list of all the athletes* on the site : </h2></center>
+<center><h3 class="blue-grey-text darken-1"> As a famous owner of a company that rhymes with Smike once said <br> *"Everyone who has a body is an athlete" or close enough.<br> We are paraphrasing here cut us some slack!</h3><center>
 <ul>
 <% @users.each do |user| %>
 <li><h2><a href="/users/<%= user.id %>"><%= user.name %></a></h2></li>

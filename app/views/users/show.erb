@@ -1,13 +1,13 @@
 <body style="background-color:powderblue;">
-<center><h3 style="color:blue;"><%= @user.name%>'s Athlete Page</h3></center>
+<center><h3 class="blue-grey-text darken-1""><%= @user.name%>'s Athlete Page</h3></center>
 
-<center><p>Name: <%=@user.name%></p></center>
+<center><p class="blue-grey-text darken-1">Name: <%=@user.name%></p></center>
 <center><p>Email: <%=@user.email%></p></center>
 
 
 
 
-<<% if current_user == @user %>
+<% if current_user == @user %>
 
 <center><button><a href="/users/<%=@user.id%>/edit"> Edit User</a></button></center>
 
