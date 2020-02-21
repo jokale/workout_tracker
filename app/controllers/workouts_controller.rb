@@ -37,7 +37,6 @@ class WorkoutsController < ApplicationController
     end 
 
     patch '/workouts/:id/edit' do 
-      # binding.pry 
       @workout = Workout.find_by_id(params[:id])
       if @workout.update(params[:workout])
     redirect to "/workouts/#{@workout.id}"
