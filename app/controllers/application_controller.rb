@@ -15,9 +15,9 @@ class ApplicationController < Sinatra::Base
 
   # signup route
 
-   get '/signup' do 
-    erb :loggedpage
-   end 
+  #  get '/signup' do 
+  #   erb :loggedpage
+  #  end 
   
    post '/signup' do
       
@@ -41,6 +41,12 @@ end
 def current_user
 
   User.find_by(id: session[:user_id])
+end 
+
+def redirect_if_not_logged_in
+  if !logged_in?
+    redirect '/login'
+  end 
 end 
 
 end 

@@ -9,7 +9,8 @@ class WorkoutsController < ApplicationController
       end
 
       get '/workouts' do
-        @workouts = Workout.all 
+        redirect_if_not_logged_in
+         @workouts = Workout.all 
         erb :"/workouts/index"
       end
   
